@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+    font-family: 'Sora', sans-serif;
+}
+
+#main-content {
+  text-align: center
+}
+
+textarea {
+  min-height: 400px;
+  min-width: 300px;
+    resize: none
+}
+
