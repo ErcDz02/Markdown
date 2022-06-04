@@ -1,0 +1,34 @@
+class Markdown extends React.Component {
+    state = {
+    text: ""
+  };
+  
+  handleChange = (e) => {
+    this.setState({
+      text: e.target.value
+    });
+  };
+
+  render() {
+    const { text } = this.state;
+    const markdown = marked(text)
+    
+    return (
+      <div>
+        <h1 className = "title">Markdown Previewer</h1>
+        <div id="main-content">
+        <textarea
+          id="editor"
+          onChange= {this.handleChange}
+          value={text}
+        ></textarea>
+          <div id="preview">
+            <div dangerouslySetInnerHTML={{__html:markdown}}/>
+          </div>
+        </div>
+        </div>
+    );
+  }
+}
+
+ReactDOM.render(<Markdown/>, document.getElementById('root'))
